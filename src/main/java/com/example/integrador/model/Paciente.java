@@ -18,7 +18,7 @@ import java.util.Set;
 
 public final class Paciente {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
     @Column
     private  String nombre;

@@ -14,17 +14,18 @@ import java.util.Objects;
 public final class Turno {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
-    @Column
-    @OneToMany(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "odontologo_id", nullable = false)
-    private int iddontolgo;
-    @Column
+    private Odontologo odontologo;
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private int idPaciente;
+    private Paciente paciente;
     @Column
     private LocalDate fecha;
 
