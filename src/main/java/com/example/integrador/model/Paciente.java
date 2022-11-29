@@ -2,6 +2,7 @@ package com.example.integrador.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import net.minidev.json.annotate.JsonIgnore;
 
@@ -15,6 +16,8 @@ import java.util.Set;
 @Setter
 @Getter
 @Table(name = "Pacientes")
+@AllArgsConstructor
+@NoArgsConstructor
 
 public final class Paciente {
     @Id
@@ -31,9 +34,7 @@ public final class Paciente {
     @Column
     private LocalDate fechaAlta;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
-    private Set<Turno> turnos=new HashSet<>();
+
 
 
 }

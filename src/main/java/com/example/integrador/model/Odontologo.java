@@ -1,6 +1,8 @@
 package com.example.integrador.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,12 +14,14 @@ import java.util.Set;
 @Setter
 @Getter
 @Table(name = "Odontologos")
+@AllArgsConstructor
+@NoArgsConstructor
 
 public final class Odontologo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private  int id;
     @Column
     private  String nombre;
     @Column
@@ -25,8 +29,6 @@ public final class Odontologo {
     @Column
     private  String matricula;
 
-    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
-    private Set<Turno> turnos=new HashSet<>();
 
 
 }

@@ -18,13 +18,20 @@ public class TurnoService {
 
 
     private TurnoRepository turnoRepository;
+    private PacienteService pacienteService;
+    private OdontologoService odontologoService;
 
 
-    public void agregar(Turno turno){turnoRepository.save(turno);}
+    public void agregar(Turno turno){
+        if (turno.getOdontologo() != null && turno.getPaciente() != null){
+        pacienteService.agregar(turno.getPaciente());
+        odontologoService.agregar(turno.getOdontologo());}
+    this.turnoRepository.save(turno);}
+
     public List<Turno> listar(){return turnoRepository.findAll();}
 
     public Turno modificar(Turno turno){return turnoRepository.save(turno);}
-
+// en el postman hay que pasarle el id para poder modificar
     public void eliminar(int id){turnoRepository.deleteById(id);}
 
     public Optional<Turno> getById(int id){return turnoRepository.findById(id);

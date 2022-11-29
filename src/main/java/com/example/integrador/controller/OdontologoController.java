@@ -4,7 +4,6 @@ package com.example.integrador.controller;
 import com.example.integrador.model.Odontologo;
 import com.example.integrador.services.OdontologoService;
 import lombok.AllArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
