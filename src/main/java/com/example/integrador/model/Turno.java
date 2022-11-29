@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Objects;
+
 @Entity
 @Setter
 @Getter
@@ -32,8 +31,6 @@ public final class Turno {
     private Paciente paciente;
     @Column
     private LocalDate fecha;
-
-
 
 
 }
