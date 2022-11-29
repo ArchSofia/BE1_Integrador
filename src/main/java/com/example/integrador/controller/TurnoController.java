@@ -36,7 +36,7 @@ public class TurnoController {
     public ResponseEntity<Turno> modificar(@RequestBody Turno turno){ return ResponseEntity.ok(service.modificar(turno));}
 
 
-    @DeleteMapping("/eliminarTurno")
+    @DeleteMapping("/eliminarTurno/{id}")
 
     public ResponseEntity<?> eliminarTurno (@PathVariable int id) {
         ResponseEntity response = null;

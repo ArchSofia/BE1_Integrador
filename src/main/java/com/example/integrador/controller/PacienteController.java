@@ -37,7 +37,7 @@ public class PacienteController {
     public ResponseEntity<Paciente> modificar(@RequestBody Paciente paciente){ return ResponseEntity.ok(service.modificar(paciente));}
 
 
-    @DeleteMapping("/eliminarPaciente")
+    @DeleteMapping("/eliminarPaciente/{id}")
 
     public ResponseEntity<?> eliminarPaciente (@PathVariable int id) {
         ResponseEntity response = null;
@@ -52,6 +52,6 @@ public class PacienteController {
 
 
     @GetMapping("/pacientes/{id}")
-    public ResponseEntity <Optional<Paciente>>  getByMatricula(@PathVariable int id) {return ResponseEntity.ok(service.getById(id));}
+    public ResponseEntity <Optional<Paciente>>  getById(@PathVariable int id) {return ResponseEntity.ok(service.getById(id));}
 }
 

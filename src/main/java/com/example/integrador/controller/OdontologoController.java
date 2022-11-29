@@ -35,7 +35,7 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> modificar(@RequestBody Odontologo odontologo){ return ResponseEntity.ok(service.modificar(odontologo));}
 
 
-    @DeleteMapping("/eliminarOdontologo")
+    @DeleteMapping("/eliminarOdontologo/{id}")
 
     public ResponseEntity<?> eliminarOdontologo (@PathVariable int id) {
         ResponseEntity response = null;
